@@ -14,6 +14,7 @@
 
     <!--javascript-->
     <script src="scripts/clock.js" charset="utf-8"></script>
+    <script src="scripts/cta.js" charset="utf-8"></script>
   </head>
   <body onload="startTime()">
 
@@ -37,10 +38,30 @@
      <!--End navigation-->
 
     </header>
-<h1> Greetings traveller from Earth. This is the local time now</h1>
-    <div id="time" class="clock"></div>
-    <div id="date"></div>
-    <div id="image"><img id="img" class="responsive" src='images/space-view.png'></div>
+      <div class="grid-container">
+        <h1 class="title"> Greetings traveller from Earth. This is the local time now</h1>
+        <div id="time" class="grid-item"></div>
+        <button id="cta" class="button">Call ship!</button>
+        <div id="rocket">
+          <img src="images/rocket-launch.svg" class="rocket" />
+        </div>
+        <div id="date"></div>
+        <div id="image"><img id="img" class="responsive" src='images/space-view.png'></div>
+      </div>
 
+      <!-- Tweenmax script -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" ></script>
+
+      <script>
+
+          document.getElementById('cta').addEventListener('click', function() {
+
+
+              TweenMax.to('.rocket', 1, {opacity: 1, y: 0, delay: 1, ease: Back.easeOut.config(1.7)});
+
+
+          })
+
+      </script>
 </body>
 </html>
